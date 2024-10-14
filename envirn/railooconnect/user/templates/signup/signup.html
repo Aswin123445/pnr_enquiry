@@ -1,0 +1,64 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+    <link rel="stylesheet" href="{% static 'user/css/signupstyle.css' %}">
+</head>
+<body>
+    <header>
+        <!-- train logo  -->
+        <div class="train_logo">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/land.png">
+                <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
+                <source media="(min-width: 1201px)" srcset="{% static 'user/images/land.png' %}">
+                <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
+            </picture>
+        </div>
+        
+
+         <div class="text_container">
+            <div class="project_name">
+                RAILOO CONNECT
+             </div>
+             <!-- options list -->
+             <div class="list" >
+                <li>
+                    <ul>About</ul>
+                    <ul>Services</ul>
+                    <ul>help</ul>
+                </li>
+             </div>
+         </div>
+         <button class="header_button" role="button">CONTACT US</button>
+    </header>
+    <div class="header-divider"></div>
+
+
+    <!-- main body signup page -->
+
+     <div class="body_part">
+        <div class="first_heading">
+            Let's Get Started
+         </div>
+         <form method="post" class="signup_form">
+            {% csrf_token %}
+            <div class="name_field">Full Name</div>
+            <input type="text" class="first_name" name="name" placeholder="First Name">
+            <input type="text" class="first_name" name="sur_name" placeholder="Sur Name">
+            <div class="name_field" >Email Address</div>
+            <input type="email" name="email" class="email" placeholder="Email Address">
+            <div class="name_field">Password</div>
+            <input type="password" name="password1" class="password" placeholder="Password">
+            <div class="name_field">Password</div>
+            <input type="password" name="password2" class="password" placeholder="Conform Password">
+
+            <button class="button-87" role="button">signup</button>
+
+         </form>
+     </div>
+</body>
+</html>

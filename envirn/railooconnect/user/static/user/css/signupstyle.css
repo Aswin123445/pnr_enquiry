@@ -1,0 +1,199 @@
+header{
+    background-color: #060606;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+}
+html{
+    background-color: #060606;
+}
+
+
+/* Base Styles for All Devices */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.full-width-header {
+    width: 100%;
+    background-color: #4CAF50; /* Default header background color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+
+}
+@media only screen and (min-width: 1250px) {
+    /* header styles */
+    .train_logo{
+       width: 5%;
+       height: auto;
+       margin-left: 1%;
+       border: 1px solid transparent;
+       transform: scale(1.5);
+ 
+     }
+ 
+     .logo{
+       height: auto;
+       width: 100%;
+     }
+ 
+     /* project name */
+     .project_name{
+         color: #f09819;
+         display: flex;
+         font-weight: bold;
+         margin-left: 1%;
+         align-items: center;
+         font-size: 3vh;
+     }
+     .list {
+         justify-content: end;
+         text-align: end;
+         align-items: center;
+         width: 25vw;
+         height: 30px;
+         color: white;
+         display: flex;
+         list-style: none;
+     }
+     .list ul{
+         display:  inline;
+         font-weight: bold;
+         font-size: 2.3vh;
+     }
+     .text_container{
+         width: calc(100% - 8%);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-right: 1%;
+         
+     }
+     .header_button{
+         appearance: none;
+         background-color: #FFFFFF;
+         border-style: none;
+         box-shadow: #ADCFFF 0 -12px 10px inset;
+         box-sizing: border-box;
+         color: #000000;
+         cursor: pointer;
+         display: inline-block;
+         font-family: -apple-system,sans-serif;
+         font-size: 1rem;
+         width: 9%;
+         height: 3.7vh;
+         font-weight: 700;
+         letter-spacing: -.24px;
+         margin-top: 1%;
+         margin-right: 1vw;
+         outline: none;
+         padding: .5rem .3rem;
+         quotes: auto;
+         text-align: center;
+         text-decoration: none;
+         transition: all .15s;
+         user-select: none;
+         -webkit-user-select: none;
+         touch-action: manipulation;
+       }
+       .header_button:hover {
+         background-color: #f09819;
+         box-shadow: #f09819 0 -6px 8px inset;
+         transform: scale(1.01);
+       }
+       
+       .header_button:active {
+         transform: scale(1.025);
+       }
+     /* out of the header box */
+     .header-divider{
+         border-top: .01px solid rgba(75, 73, 73, 0.707);
+         border-color: white;
+         margin-bottom: 8vh;
+     }
+
+     /* body section */
+     .body_part{
+        text-align: center;
+        justify-content: center;
+        border: 2px dotted rgb(143, 137, 137);
+        height: 80vh;
+        width: 60vw;
+        margin: auto;
+        border-radius: 2vh;
+     /* first heading */
+     }
+     .first_heading{
+        color: #f09819;
+        text-align: center;
+        font-size: 2.9rem;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 2vh;
+    }  
+    .name_field{
+
+        display: flex;
+        justify-content: start;
+        color: white;
+        font-size: 1.1rem;
+        margin-left: 9.5vw;
+        margin-top: 2vw;
+        font-weight: 600;
+        margin-bottom: 1vh;
+
+    }
+    .first_name{
+        margin-left: 2vw;
+        height: 4vh;
+        font-size: 1.2rem;
+        width: 20vw;
+    }
+    .email{
+        margin-left: 2vw;
+        height: 4vh;
+        font-size: 1.2rem;
+        width: 42.5vw;
+    }
+    .password{
+        margin-left: 2vw;
+        height: 4vh;
+        font-size: 1.2rem;
+        width: 42.5vw;
+    }
+    .button-87 {
+        font-size: 1rem;
+        margin: 3vh auto;
+        padding: 15px 30px;
+        text-align: center;
+        width: 30vw;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        border-radius: 10px;
+        display: block;
+        border: 0px;
+        font-weight: 700;
+        box-shadow: 0px 0px 14px -7px #f09819;
+        background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+      .button-87:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .button-87:active {
+        transform: scale(0.95);
+      }
+  
+}

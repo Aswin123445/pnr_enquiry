@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing_page</title>
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <!-- train logo  -->
+        <div class="train_logo">
+            <picture>
+                <source media="(max-width: 600px)" srcset="{% static 'user/images/land.png' %}">
+                <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
+                <source media="(min-width: 1201px)" srcset="{% static 'user/images/land.png' %}">
+                <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
+            </picture>
+        </div>
+        
+
+         <div class="text_container">
+            <div class="project_name">
+                RAILOO CONNECT
+             </div>
+             <!-- options list -->
+             <div class="list" >
+                <li>
+                    <ul>About</ul>
+                    <ul>Services</ul>
+                    <ul>help</ul>
+                </li>
+             </div>
+         </div>
+         <button class="header_button" role="button">CONTACT US</button>
+    </header>
+    <div class="header-divider"></div>
+
+    <div class="content_section">
+        <div class="welcome_message">Welcome to Railoo Connect!</div>
+        <div class="description_section">
+            <div class="first_line">Planning your train travels just got simpler.</div>
+            <div class="second_line">With Railoo
+                Connect, you can easily check your PNR status and stay
+                 updated on your journey's progress.
+            </div>
+            <div third line>
+                Whether you're
+               on a quick trip or a long adventure, we're here to
+                make your travel experience smooth and stress-free.
+            </div>
+              
+            
+        </div>
+        <div class="login_signup_button">
+            <a href="{% url 'singin' %}" style="text-decoration: none;"><button class="button-87" role="button" >SignIn</button></a>
+            <a href="{% url 'signup' %}" style="text-decoration: none;"><button class="button-87" role="button" >SignUp</button></a>
+        </div>
+    </div>
+    
+</body>
+</html>
