@@ -24,12 +24,11 @@ def signin(request):
             if user is not None:
                 print("helo")
                 login(request,user)
-                return redirect(home_page)
+                return redirect('home_page')
         else :
             print(f'form errors {form.errors}')
     return render(request,'signin/signin.html')
 
-def home_page(request):
-    return render(request,'homepage/home.html')
+
 
 

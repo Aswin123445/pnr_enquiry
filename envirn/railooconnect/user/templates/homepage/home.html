@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home pag</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'user/css/home.css' %}">
 </head>
 <body>
     <header>
@@ -35,11 +36,12 @@
     <div class="header-divider"></div>
 
     <!-- pnr enquiry -->
-    <div class="container">
+    <div class="container" style="background-image: url({% static 'user/images/h.webp' %});">
         <div class="form_holder">
             <div class="pnr_checker">
-                <form action="">
-                    <input type="text" class="text_field" placeholder="Enter PNR Number">
+                <form method="get">
+                    {% csrf_token %}
+                    <input type="text" name="pnr" class="text_field" placeholder="Enter PNR Number">
                     <button type="submit" class="button-pnr">check status</button>
                 </form>
             </div>
@@ -47,4 +49,175 @@
         
     </div>
 </body>
+<style>
+    .train_logo{
+       width: 5%;
+       height: auto;
+       margin-left: 1%;
+       border: 1px solid transparent;
+       transform: scale(1.5);
+ 
+     }
+ 
+     .logo{
+       height: auto;
+       width: 100%;
+     }
+ 
+     /* project name */
+     .project_name{
+         color: #f09819;
+         display: flex;
+         font-weight: bold;
+         margin-left: 1%;
+         align-items: center;
+         font-size: 3vh;
+     }
+     .list {
+         justify-content: end;
+         text-align: end;
+         align-items: center;
+         width: 25vw;
+         height: 30px;
+         color: white;
+         display: flex;
+         list-style: none;
+     }
+     .list ul{
+         display:  inline;
+         font-weight: bold;
+         font-size: 2.3vh;
+     }
+     .text_container{
+         width: calc(100% - 8%);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-right: 1%;
+         
+     }
+     .header_button{
+         appearance: none;
+         background-color: #FFFFFF;
+         border-style: none;
+         box-shadow: #ADCFFF 0 -12px 10px inset;
+         box-sizing: border-box;
+         color: #000000;
+         cursor: pointer;
+         display: inline-block;
+         font-family: -apple-system,sans-serif;
+         font-size: 1rem;
+         width: 9%;
+         height: 3.7vh;
+         font-weight: 700;
+         letter-spacing: -.24px;
+         margin-top: 1%;
+         margin-right: 1vw;
+         outline: none;
+         padding: .5rem .3rem;
+         quotes: auto;
+         text-align: center;
+         text-decoration: none;
+         transition: all .15s;
+         user-select: none;
+         -webkit-user-select: none;
+         touch-action: manipulation;
+       }
+       .header_button:hover {
+         background-color: #f09819;
+         box-shadow: #f09819 0 -6px 8px inset;
+         transform: scale(1.01);
+       }
+       
+       .header_button:active {
+         transform: scale(1.025);
+       }
+     /* out of the header box */
+     .header-divider{
+         border-top: .01px solid rgba(75, 73, 73, 0.707);
+         border-color: white;
+     }
+
+     .container{
+        color: white;
+        background-color: green;
+        height: calc(100vh - 8vh);
+        width: 100vw;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('user/images/h.jpg');
+     }
+     .container::before {
+        content: "";
+        position: absolute;
+        top: 1;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.641); /* Adds a semi-transparent black overlay */
+        z-index:1;
+     }
+     .pnr_checker{
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     .text_field{
+        font-weight: bold;
+        letter-spacing: 5px;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-left: 8vw;
+        margin-top: 1vh;
+        height: 5.5vh;
+        border-radius: 10px;
+        width: 50vw;
+        border: none;
+     }
+     .form_holder{
+        padding-top: 20px;
+        margin: auto;
+        z-index: 2;
+        top: 30vh;
+        height: 35vh;
+        width: 70vw;
+        position: relative;
+        padding-top: 5vh;
+        backdrop-filter: blur(3px);
+        background-color: rgba(197, 198, 197, 0.2); 
+        border: 1px solid white;
+     }
+     .button-pnr{
+            background-color: #13aa52;
+            border: 1px solid #13aa52;
+            border-radius: 4px;
+            box-shadow: rgba(192, 185, 185, 0.527) 0 2px 4px 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            outline: none;
+            outline: 0;
+            padding: 10px 25px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 150ms, box-shadow 150ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            margin-left: 37%;
+            margin-top: 2vh;
+            width: 13vw;
+            font-size: 1.3rem;
+            font-weight: bold;
+     }
+     .button-pnr:hover {
+        box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+        transform: translateY(-2px);
+      }
+</style>
 </html>

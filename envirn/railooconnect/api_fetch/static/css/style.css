@@ -1,0 +1,273 @@
+header{
+    background-color: #060606;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+}
+html{
+    background-color: #060606;
+}
+
+
+/* Base Styles for All Devices */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.full-width-header {
+    width: 100%;
+    background-color: #4CAF50; /* Default header background color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+
+}
+@media only screen and (min-width: 1250px) {
+    /* header styles */
+    .train_logo{
+       width: 5%;
+       height: auto;
+       margin-left: 1%;
+       border: 1px solid transparent;
+       transform: scale(1.5);
+ 
+     }
+ 
+     .logo{
+       height: auto;
+       width: 100%;
+     }
+ 
+     /* project name */
+     .project_name{
+         color: #f09819;
+         display: flex;
+         font-weight: bold;
+         margin-left: 1%;
+         align-items: center;
+         font-size: 3vh;
+     }
+     .list {
+         justify-content: end;
+         text-align: end;
+         align-items: center;
+         width: 25vw;
+         height: 30px;
+         color: white;
+         display: flex;
+         list-style: none;
+     }
+     .list ul{
+         display:  inline;
+         font-weight: bold;
+         font-size: 2.3vh;
+     }
+     .text_container{
+         width: calc(100% - 8%);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-right: 1%;
+         
+     }
+     .header_button{
+         appearance: none;
+         background-color: #FFFFFF;
+         border-style: none;
+         box-shadow: #ADCFFF 0 -12px 10px inset;
+         box-sizing: border-box;
+         color: #000000;
+         cursor: pointer;
+         display: inline-block;
+         font-family: -apple-system,sans-serif;
+         font-size: 1rem;
+         width: 9%;
+         height: 3.7vh;
+         font-weight: 700;
+         letter-spacing: -.24px;
+         margin-top: 1%;
+         margin-right: 1vw;
+         outline: none;
+         padding: .5rem .3rem;
+         quotes: auto;
+         text-align: center;
+         text-decoration: none;
+         transition: all .15s;
+         user-select: none;
+         -webkit-user-select: none;
+         touch-action: manipulation;
+       }
+       .header_button:hover {
+         background-color: #f09819;
+         box-shadow: #f09819 0 -6px 8px inset;
+         transform: scale(1.01);
+       }
+       
+       .header_button:active {
+         transform: scale(1.025);
+       }
+     /* out of the header box */
+     .header-divider{
+         border-top: .01px solid rgba(75, 73, 73, 0.707);
+         border-color: white;
+         margin-bottom: 8vh;
+     }
+     .outer-border{
+        border-bottom-left-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+        height: 36vh;
+        margin: auto;
+        width: 80vw;
+        border-width: 1px;
+        border-color: rgba(86, 86, 86, 0.573);
+        border-style:groove;
+     }
+     .details-border{
+        border-top-left-radius: 2vh;
+        border-top-right-radius: 2vh;
+        height: 36vh;
+        margin: auto;
+        width: 80vw;
+        border-width: 1px;
+        border-color: rgba(86, 86, 86, 0.573);
+        border-style:groove;
+        border-top: none;
+
+     }
+     .detail_heading{
+        position: relative;
+        top: 2vh;
+        display: inline;
+        margin-top: 3vh;
+        margin-left: 3vw;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 1px;
+        word-spacing: 3px;
+        font-size: 25px;
+     }
+     .sub_heading{
+        color: rgba(255, 255, 255, 0.423);
+        display: flex;
+        width:32vw;
+        margin-top:1.5vh;
+        margin-left: 3vw;
+        font-size: 21px;
+        font-weight: 500;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+     .train_name{
+        letter-spacing: .02rem;
+        font-size: 1.6rem;
+        align-items: center;
+        padding: 0 3vw;
+        justify-content: space-between;
+        display: flex;
+        color: white;
+        height: 5vh;
+        margin-top: 3vh;
+     }
+     .first_class{
+        font-weight: 700;
+        margin-right: 1vw;
+     }
+     .class_travelling{
+        color: rgb(151, 149, 149);
+        font-weight: 600;
+        font-size: .8rem;
+        padding-left: 3vw;
+     }
+     .time_schedule {
+        margin-top: 2vh;
+        height: 12vh;
+        justify-content: space-between;
+        display: flex;
+     }
+     .from_place{
+        color: white;
+        display: inline-block;
+        height: 8.7;
+        margin-top: 3vh;
+        margin-left: 3vw;
+        width: 15vw;
+     }
+     .from_station{
+        height: 5vh;
+        width: 15vw;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+
+     }
+     .starting_date{
+        color:  rgba(255, 255, 255, 0.423);
+        font-weight: bold;
+     }
+     .border_between{
+        margin-top: 7vh;
+        height: .01px;
+        border-bottom: 1px solid white;
+        width: 10vw;
+     }
+     .time_travel{
+        text-align: center;
+        margin-top: 5.5vh;
+        color: rgb(190, 183, 183);
+        width: 6vw;
+     }
+     .border_long{
+        margin-top: 7vh;
+        height: .01px;
+        border-bottom: 1px solid white;
+        width: 27vw;
+     }
+     .chart_status{
+        color: rgb(229, 151, 6);
+        text-align: right;
+        height: 4vh;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+        padding-top: 1vh;
+        padding-right: 5.4vw;
+        font-size: 1.04rem;
+        margin-bottom: 1vh;
+     }
+     .details_row{
+        font-size: 1.3rem;
+        height: 4vh;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        padding: 0 3vw;
+        margin-bottom: 3vh;
+     }
+     .passenger_data{
+        font-weight: bold;
+        margin-top: 2vh;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+     }
+     .pass_name{
+        padding-left: 3vw;
+     }
+     .pass_booking{
+        padding-right: 3vw;
+     }
+     .pass_current{
+        padding-right: 8.6vw;
+        font-size: 1.2rem;
+        color: white;
+     }
+     .divide{
+       border: 1px solid rgb(85, 85, 85);
+       background-color: white;
+       margin: 0 3vw;
+       margin-right: 8vw;
+     }
+}

@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pnr fetch</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <!-- train logo  -->
+        <div class="train_logo">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/land.png">
+                <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
+                <source media="(min-width: 1201px)" srcset="">
+                <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
+            </picture>
+        </div>
+         <div class="text_container">
+            <div class="project_name">
+                RAILOO CONNECT
+             </div>
+             <!-- options list -->
+             <div class="list" >
+                <li>
+                    <ul>About</ul>
+                    <ul>Services</ul>
+                    <ul>help</ul>
+                </li>
+             </div>
+         </div>
+         <button class="header_button" role="button">CONTACT US</button>
+    </header>
+    <div class="header-divider"></div>
+    <!-- pnr fetch area -->
+     <div class="outer-border">
+        <div class="detail_heading">
+            PNR STATUS
+        </div>
+        <div class="sub_heading">
+            know your booking  status and plan accordingly
+        </div>
+        <div class="train_name">
+           <div class="first_class">
+            {{data.train_name}}
+           </div>
+           <div class="first_class">
+            PNR : {{data.pnr}}
+           </div>
+        </div>
+        <div class="class_travelling">
+            {{data.journeyClass}} - {{data.quota}}
+        </div>
+        <div class="time_schedule">
+            <div class="from_place">
+                <div class="from_station">
+                    KUNDAPURA - KUDA
+                </div>
+                <div class="starting_date">
+                    20:50, 11 Jan
+                </div>
+
+            </div>
+            <div class="border_between"></div>
+            <div class="time_travel">11h 05m</div>
+            <div class="border_long"></div>
+            <div class="from_place">
+                <div class="from_station">
+                    KANNUR
+                </div>
+                <div class="starting_date">
+                    20:50, 11 Jan
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="details-border">
+        <div class="chart_status">
+            chart not prepared
+        </div>
+        <div class="details_row">
+            <div class="name">NAME</div>
+            <div class="booking_status">BOOKING STATUS</div>
+            <div class="current_status">CURRENT STATUS</div>
+        </div>
+        <div class="passenger_data">
+            <div class="pass_name">passenger 1</div>
+            <div class="pass_booking">CNF/B2/37/MB</div>
+            <div class="pass_current">conformed</div>
+        </div>
+        <div class="divide"></div>
+     </div>
+</body>
+</html>
