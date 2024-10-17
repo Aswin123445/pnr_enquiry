@@ -270,4 +270,79 @@ body, html {
        margin: 0 3vw;
        margin-right: 8vw;
      }
+
+     .payment_border{
+      color: white;
+      border: 1px solid rgb(85, 85, 85);
+      height: 15vh;
+      border-radius: 10px;
+      border-bottom-left-radius: none;
+      border-bottom-right-radius: none;
+      border-top: none;
+      width: 80vw;
+      margin: 0 auto;
+     }
+     .first_sentace{
+      font-weight: 600;
+      word-spacing: .6vw;
+      color: aliceblue;
+      text-align: center;
+      margin-top: 1vh;
+      padding-top: 3vh;
+     }
+     .second_line{
+      text-align: center;
+      font-size: .9rem;
+      margin-top: .9vh;
+      font-weight: 700;
+     }
+     .third_line{
+      color: rgb(94, 93, 90);
+      text-align: center;
+      margin-top: 1vh;
+      font-weight: 700;
+     }
+     .search_bar{
+      padding-left: 1vw;
+      color: white;
+      word-spacing: .3vw;
+      letter-spacing: .1vw;
+      font-size: 1rem;
+      background-color: black;
+      border: .02rem solid rgb(45, 42, 42);
+      margin-left: 12vw;
+      margin-bottom: 3vh;
+      height: 4.8vh;
+      width: 27vw;
+      border-radius: 7px;
+     }
+     .search_bar:focus{
+      background-color: black;
+      border: .001rem solid rgb(77, 73, 73);
+      outline: none;
+     }
+     .search_bar_button{
+      color: white;
+      height: 5.2vh;
+      font-weight: bold;
+      border-radius: 7px;
+      width: 7vw;
+      margin-left: .3vw;
+      background-color: black;
+      margin-top: 5px;
+      position:absolute;
+      border: .001rem solid rgb(77, 73, 73);
+     }
+     .search_bar_button:hover{
+      background-color: rgba(225, 223, 223, 0.693);
+      color: black;
+     }
+     .search_bar_button:active {
+      color: white;
+      transform: scale(0.95); 
+      background-color: #037a39; 
+  }
+  .form_containter{
+      display: flex;
+   }
 }

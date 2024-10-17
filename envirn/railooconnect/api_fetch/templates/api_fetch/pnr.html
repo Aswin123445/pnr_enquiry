@@ -14,8 +14,8 @@
             <picture>
                 <source media="(max-width: 600px)" srcset="/land.png">
                 <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
-                <source media="(min-width: 1201px)" srcset="">
-                <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
+                <source media="(min-width: 1201px)" srcset="{% static 'images/land.png' %}">
+                <img src="{% static 'land.png' %}" alt="Train Logo" class="logo" style="height: 100%;">
             </picture>
         </div>
          <div class="text_container">
@@ -34,7 +34,16 @@
          <button class="header_button" role="button">CONTACT US</button>
     </header>
     <div class="header-divider"></div>
+
+        <!-- search bar -->
+        <div class="form_containter">
+            <form >
+                <input type="text" class="search_bar" placeholder="check pnr and conform your seat" style="margin-top: 5px;">
+                <button type="submit" class="search_bar_button" >CHECK PNR</button>
+             </form>
+         </div>
     <!-- pnr fetch area -->
+
      <div class="outer-border">
         <div class="detail_heading">
             PNR STATUS
@@ -97,8 +106,13 @@
                   {{i.current_status}}
               </div>
           </div>
-          <div class="divide" style="margin-top: 4vh; margin-bottom: 2vh;"></div>
+          <div class="divide" style="margin-top: 2vh; margin-bottom: 2vh;"></div>
         {% endfor %}
+     </div>
+     <div class="payment_border">
+        <div class="first_sentace">Ticket Fare</div>
+        <div class="second_line">700</div>
+        <div class="third_line">travel reponsibly happy journey</div>
      </div>
 </body>
 </html>
