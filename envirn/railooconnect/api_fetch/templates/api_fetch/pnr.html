@@ -43,7 +43,7 @@
             know your booking  status and plan accordingly
         </div>
         <div class="train_name">
-           <div class="first_class">
+           <div class="first_class" style="overflow: none;">
             {{data.train_name}}
            </div>
            <div class="first_class">
@@ -51,12 +51,12 @@
            </div>
         </div>
         <div class="class_travelling">
-            {{data.journeyClass}} - {{data.quota}}
+            {{data.journey_compartment}} - {{data.quota}}
         </div>
         <div class="time_schedule">
             <div class="from_place">
                 <div class="from_station">
-                    KUNDAPURA - KUDA
+                    {{data.full_name}} - {{data.Sstation}}
                 </div>
                 <div class="starting_date">
                     20:50, 11 Jan
@@ -68,7 +68,7 @@
             <div class="border_long"></div>
             <div class="from_place">
                 <div class="from_station">
-                    KANNUR
+                    {{data.destiation_name}}
                 </div>
                 <div class="starting_date">
                     20:50, 11 Jan
@@ -76,21 +76,29 @@
             </div>
         </div>
      </div>
-     <div class="details-border">
+     <div class="details-border" style="height: {{height}}vh;">
         <div class="chart_status">
-            chart not prepared
+            {{data.chart_status}}
         </div>
         <div class="details_row">
             <div class="name">NAME</div>
             <div class="booking_status">BOOKING STATUS</div>
             <div class="current_status">CURRENT STATUS</div>
         </div>
-        <div class="passenger_data">
-            <div class="pass_name">passenger 1</div>
-            <div class="pass_booking">CNF/B2/37/MB</div>
-            <div class="pass_current">conformed</div>
-        </div>
-        <div class="divide"></div>
+        {% for i in data.passengerlist %}
+          <div class="passenger_data" style="height: 3vh;">
+              <div class="pass_name">
+                 PASSENGER {{i.passengerSerialNumber}}
+              </div>
+              <div class="pass_booking" style="margin-left: -5vw;">
+                  {{i.booking_status}}
+              </div>
+              <div class="pass_current">
+                  {{i.current_status}}
+              </div>
+          </div>
+          <div class="divide" style="margin-top: 4vh; margin-bottom: 2vh;"></div>
+        {% endfor %}
      </div>
 </body>
 </html>

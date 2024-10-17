@@ -1,5 +1,7 @@
 from django.http import JsonResponse
 import requests
+    
+
 def fetch_data_from_api(pnr_number):
     url = f"https://irctc-indian-railway-pnr-status.p.rapidapi.com/getPNRStatus/{pnr_number}"
     header={
@@ -22,13 +24,16 @@ def custom_dictionary(data_dict):
         'chart_status':data_dict['data']['chartStatus'],
         'distance':data_dict['data']['distance'],
         'ticketFare':data_dict['data']['ticketFare'],
+        'journey_compartment':data_dict['data']['journeyClass'],
+        'quota':data_dict['data']['quota'],
         'passengerlist':[]
     }
     i=0
     while i < cust_dict['numberpassenger']:
         passenger_details={
             'booking_status':data_dict['data']['passengerList'][i]['bookingStatusDetails'],
-            'current_status':data_dict['data']['passengerList'][i]['currentStatus']
+            'current_status':data_dict['data']['passengerList'][i]['currentStatus'],
+            'passengerSerialNumber':data_dict['data']['passengerList'][i]['passengerSerialNumber']
         }
         cust_dict['passengerlist'].append(passenger_details)
         i += 1

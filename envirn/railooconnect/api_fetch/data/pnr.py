@@ -4,7 +4,7 @@ datas={
     'pnr': '8623136975',
     'Sstation': 'ET',
     'dstation': 'PRYJ',
-    'numberpassenger': 2,
+    'numberpassenger': 4,
     'chart_status': 'Chart Not Prepared',
     'distance': 612,
     'journeyClass':'3A',
@@ -13,11 +13,23 @@ datas={
     'passengerlist': [
         {
             'booking_status': 'CNF/B2/36/LB',
-            'current_status': 'CNF'
+            'current_status': 'CNF',
+            'passengerSerialNumber':1
         },
         {
             'booking_status': 'CNF/B2/37/MB',
-            'current_status': 'CNF'
-        }
+            'current_status': 'CNF',
+            'passengerSerialNumber':2
+        },
+        {
+            'booking_status': 'CNF/B2/37/MB',
+            'current_status': 'CNF',
+            'passengerSerialNumber':2
+        },
+                {
+            'booking_status': 'CNF/B2/37/MB',
+            'current_status': 'CNF',
+            'passengerSerialNumber':2
+        },
     ]
 }
