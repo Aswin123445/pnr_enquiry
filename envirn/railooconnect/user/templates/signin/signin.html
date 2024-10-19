@@ -16,7 +16,7 @@
                 <source media="(max-width: 600px)" srcset="/land.png">
                 <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
                 <source media="(min-width: 1201px)" srcset="">
-                <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
+                <img src="{% static 'images/land.png' %}" alt="Train Logo" class="logo" style="height: 100%;">
             </picture>
         </div>
          <div class="text_container">
@@ -34,21 +34,97 @@
          </div>
          <button class="header_button" role="button">CONTACT US</button>
     </header>
+
     <div class="header-divider"></div>
      <!-- main body signup page -->
 
+
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="{% if error %} notification  error-notification {% else %} notification {% endif %}" id="notification" style="color: white; list-style-type: none;">
+       {{ message }}
+        <button class="close-btn" onclick="closeNotification()">X</button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
      <div class="body_part">
+
         <div class="first_heading">
             Let's Get Started
          </div>
-         <form method="post" class="signup_form">
-            {% csrf_token %}
+         
+         <form method="post" class="signup_form" style="color: white;">
+            {%csrf_token%}
             <div class="name_field">Email Address</div>
             <input type="email" name="email" class="email" placeholder="Email Address">
             <div class="name_field">Password</div>
             <input type="password" name="password" class="password" placeholder="Password">
             <button type="submit" class="button-87" >SignIn</button>
          </form>
+         <div class=" sign_in_block"   style="  text-align: right; padding-right: 15vw; margin-top: -18px;">
+            <div class="no_account" style="color: rgb(163, 161, 161); text-align: right; margin-top: -2vh;  display: inline-block;">
+                don't have an account??
+             </div>
+             <div class="no_account_buuton" style=" display: inline-block; color: greenyellow; font-weight: bold;">
+                <a href="{% url 'signup' %}" style="text-decoration: none; color: inherit;">SIGN UP</a>
+            </div>
+         </div>
      </div>
+     <script>
+        // Close Notification function
+        function closeNotification() {
+            document.getElementById("notification").style.display = "none";
+        }
+    </script>
+    
 </body>
+<style>
+    .notification {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 16px; 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    width: 350px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    }
+    .error-notification {
+    background-color: red;
+       color: white;
+    }
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Animation for Notification */
+.notification {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
 </html>

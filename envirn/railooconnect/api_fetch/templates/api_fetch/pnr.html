@@ -31,14 +31,14 @@
                 </li>
              </div>
          </div>
-         <button class="header_button" role="button">CONTACT US</button>
+         <button class="header_button"  role="button">CONTACT US</button>
     </header>
     <div class="header-divider"></div>
-
         <!-- search bar -->
         <div class="form_containter">
-            <form >
-                <input type="text" class="search_bar" placeholder="check pnr and conform your seat" style="margin-top: 5px;">
+            <form method="get" ac>
+                {% csrf_token %}
+                <input type="text" class="search_bar" name="pnr" placeholder="check pnr and conform your seat" style="margin-top: 5px;">
                 <button type="submit" class="search_bar_button" >CHECK PNR</button>
              </form>
          </div>

@@ -195,4 +195,45 @@ body, html {
   .button-87:active {
     transform: scale(0.95);
   }
+  .notification {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 16px; /* Padding inside the notification */
+    position: fixed; /* Fixed position to stick on the screen */
+    top: 20px; /* Position from the top of the page */
+    right: 20px; /* Align right */
+    width: 300px; /* Width of the notification */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000; /* Make sure it's on top */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between message and button */
+    align-items: center; /* Align items vertically */
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Animation for Notification */
+.notification {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 }

@@ -37,6 +37,18 @@
     </header>
     <div class="header-divider"></div>
 
+    {% if messages %}
+    {{ messages }}
+    {% for message in messages %}
+    <div class="{% if error %} notification  error-notification {% else %} notification {% endif %}" id="notification" style="color: white; list-style-type: none;">
+        {{ message }}
+        <button class="close-btn" onclick="closeNotification()">X</button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+
 
     <!-- main body signup page -->
 
@@ -55,10 +67,62 @@
             <input type="password" name="password1" class="password" placeholder="Password">
             <div class="name_field">Password</div>
             <input type="password" name="password2" class="password" placeholder="Conform Password">
-
             <button class="button-87" role="button">signup</button>
-
          </form>
      </div>
+
+     <script>
+        // Close Notification function
+        function closeNotification() {
+            document.getElementById("notification").style.display = "none";
+        }
+    </script>
+     
 </body>
+<style>
+    .notification {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 16px; 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    width: 350px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    }
+    .error-notification {
+    background-color: red;
+       color: white;
+    }
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Animation for Notification */
+.notification {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
 </html>

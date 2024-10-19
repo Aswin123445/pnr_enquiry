@@ -14,7 +14,7 @@
             <picture>
                 <source media="(max-width: 600px)" srcset="/land.png">
                 <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
-                <source media="(min-width: 1201px)" srcset="">
+                <source media="(min-width: 1201px)" srcset="{% static 'images/land.png' %}">
                 <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
             </picture>
         </div>
@@ -31,9 +31,19 @@
                 </li>
              </div>
          </div>
-         <button class="header_button" role="button">CONTACT US</button>
+         <a href="{% url 'logout' %}"><button class="header_button" style="width: 10vw; margin-top: 2vh; margin-right: 3vw;" role="button">LOG OUT</button></a>
     </header>
     <div class="header-divider"></div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="{% if error %} notification  error-notification {% else %} notification {% endif %}" id="notification" style="color: white; list-style-type: none;">
+       {{ message }}
+        <button class="close-btn" onclick="closeNotification()">X</button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
 
     <!-- pnr enquiry -->
     <div class="container" style="background-image: url({% static 'user/images/h.webp' %});">
@@ -48,6 +58,12 @@
         </div>
         
     </div>
+    <script>
+        // Close Notification function
+        function closeNotification() {
+            document.getElementById("notification").style.display = "none";
+        }
+    </script>
 </body>
 <style>
     .train_logo{
@@ -219,5 +235,50 @@
         box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
         transform: translateY(-2px);
       }
+
+      .notification {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 16px; 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    width: 350px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    }
+    .error-notification {
+    background-color: red;
+       color: white;
+    }
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Animation for Notification */
+.notification {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 </style>
 </html>
