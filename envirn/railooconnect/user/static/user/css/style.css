@@ -154,75 +154,149 @@ body, html {
         border-top: .01px solid rgba(75, 73, 73, 0.707);
         border-color: white;
     }
-
-    /* body section  */
-    .content_section{
-        height: calc(100vh - 14vh);
-        width: 100%;
-        color: white;
-    }
-    .welcome_message{
-        color: #f09819;
-        text-align: center;
-        width: 100%;
-        height: 9vh;
-        margin-top: 4vh;
-        font-size: 3rem;
-        font-weight: bold;  
-        margin-bottom: 10vh;      
-    }
-    .description_section{
-        width: 85vw;
-        height: 30vh;
-        color: white;
-        text-align: center;
-        font-size: 2rem;
-        margin: 0 auto;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    .first_line{
-        font-weight: 500;
-        font-size: 2rem;
-    }
-
-
-    /* login sign in button */
-    .button-87 {
-        font-size: 2rem;
-        margin: 10px;
-        padding: 15px 30px;
-        text-align: center;
-        width: 30vw;
-        text-transform: uppercase;
-        transition: 0.5s;
-        background-size: 200% auto;
-        color: white;
-        border-radius: 10px;
-        display: block;
-        border: 0px;
-        font-weight: 700;
-        box-shadow: 0px 0px 14px -7px #f09819;
-        background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-      }
-      .button-87:hover {
-        background-position: right center;
-        /* change the direction of the change here */
-        color: #fff;
-        text-decoration: none;
-      }
-      
-      .button-87:active {
-        transform: scale(0.95);
-      }
-      .login_signup_button{
+    .main_partition{
+        height: 92vh;
+        width: 100vw;
         display: flex;
-        justify-content: center;
-        gap: 4vw;
-      }
-    
+    }
+    .supdivone{
+        width: 40vw;
+        height: 93vh;
+        background-color: black;
+    }
+    .supdivtwo{
+        position: relative;
+        width: calc(100% - 40%);
+        height: 100vh;
+        background-size: contain;
+        overflow: hidden;
+        display:flex;
+        justify-content:center;
 
+    }
+    .supdivtwo img{
+        position: relative;
+        bottom: 16vh;
+        background-size:contain;
+        z-index: 1;
+        mask-image: linear-gradient(to left, black 20%, transparent); /* Apply gradient mask */
+    }
+    
+    .welcom_div{
+        margin-left: 6vh;
+        margin-top: 4vh;
+        height: 40vh;
+        width: 100%;
+        color: green;
+    }
+    .button_div{
+        height: 53vh;
+        width: 100%;
+
+    }
+    .welcome{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        margin-left: 3vw;
+        margin-top: 5vh;
+    }
+    .hints{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #92a7a9;
+        margin-left: 5vw;
+        margin-top: 5vh;
+    }
+    .no-border{
+        margin-top: 1vh;
+    }
+    .button_div{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        margin-left: 6vw;
+    }
+    .infosection{
+        border-top: .001em solid rgb(84, 83, 83);
+        height: 30vh;
+        width: 32vw;
+        color: #92a7a9;
+        margin-top: 1vh;
+        font-size: 1rem;
+        font-weight: 400;
+        font-family:Arial, Helvetica, sans-serif;
+        padding: 1em;
+        line-height: 3vh;
+    }
+
+    .button_con{
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 2;
+        padding-left: 40px;
+        position:absolute;
+        color: rgb(219, 153, 0);
+        height: 25vh;
+        width: 30vw;
+        left: 25vw;
+        border-radius: 4vh;
+        backdrop-filter: blur(5px);
+        background-color: transparent;
+        margin-top: 4vh;
+        border: 1px solid white;
+    }
+    .starter{
+        text-shadow: 1px 1px 1px white;
+        padding-top: 2vh;
+        width: 100%;
+        height: 5vh;
+        padding-left: 4vw;
+        margin-top: 3vh;
+    }
+    .but1{
+        margin-left: 2vw;
+        border: 2px solid rgb(250, 243, 243);
+        background-color: rgb(233, 169, 9);
+        color: white;
+        border-radius: 3vh;
+        font-weight: bold;
+        height: 5vh;
+        width: 10vw;
+        margin-right: 3vw;
+    }
+    .but2{
+        border: 2px solid rgb(250, 243, 243);
+        background-color: rgb(233, 169, 9);
+        color: white;
+        border-radius: 3vh;
+        font-weight: bold;
+        height: 5vh;
+        width: 10vw;
+
+    }
+    .but2:hover {
+        background-color: rgb(255, 190, 50); 
+        border-color: rgb(255, 230, 230); 
+        transform: scale(1.05); /* Slightly enlarge the button */
+        cursor: pointer; /* Show pointer cursor on hover */
+    }
+    
+    /* Active effect (when the button is pressed) */
+    .but2:active {
+        background-color: rgb(200, 150, 5); /* Darker color on active click */
+        transform: scale(0.95); /* Slightly shrink the button when pressed */
+    }
+    .but1:hover {
+        background-color: rgb(255, 190, 50); 
+        border-color: rgb(255, 230, 230); 
+        transform: scale(1.05); /* Slightly enlarge the button */
+        cursor: pointer; /* Show pointer cursor on hover */
+    }
+    
+    /* Active effect (when the button is pressed) */
+    .but1:active {
+        background-color: rgb(200, 150, 5); /* Darker color on active click */
+        transform: scale(0.95); /* Slightly shrink the button when pressed */
+    }
 }

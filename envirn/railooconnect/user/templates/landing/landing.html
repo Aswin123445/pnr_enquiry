@@ -12,10 +12,10 @@
         <!-- train logo  -->
         <div class="train_logo">
             <picture>
-                <source media="(max-width: 600px)" srcset="{% static 'user/images/land.png' %}">
+                <source media="(max-width: 600px)" srcset="/land.png">
                 <source media="(min-width: 601px) and (max-width: 1200px)" srcset="logo.png">
                 <source media="(min-width: 1201px)" srcset="{% static 'user/images/land.png' %}">
-                <img src="land.png" alt="Train Logo" class="logo" style="height: 100%;">
+                <img src="{% static 'user/images/land.png' %}" alt="Train Logo" class="logo" style="height: 100%;">
             </picture>
         </div>
         
@@ -36,26 +36,54 @@
          <button class="header_button" role="button">CONTACT US</button>
     </header>
     <div class="header-divider"></div>
+    <div class="main_partition">
+        <div class="supdivone">
+            <div class="welcom_div">
+                <div class="welcome">
+                    WELCOME TO RAILOOCONNECT !
+                </div>
+                <div class="hints">
+                    Lets's plan your journey
+                </div>
+                <div class="no-border hints">
+                    Check current status
+                </div>
+                <div class="no-border hints">
+                    Predict probability
+                </div>
+                <div class="no-border hints">
+                    And more
+                </div>
+            </div>
+            <div class="button_div">
+                  WHAT WE DO
+                  <div class="infosection">
+                    <div style="font-weight: 600; font-size: 1.2rem; padding-bottom: 1vh;">Welcome to Railoo Connect!</div>
 
-    <div class="content_section">
-        <div class="welcome_message">Welcome to Railoo Connect!</div>
-        <div class="description_section">
-            <div class="first_line">Planning your train travels just got simpler.</div>
-            <div class="second_line">With Railoo
-                Connect, you can easily check your PNR status and stay
-                 updated on your journey's progress.
+                    Railoo Connect is your go-to platform for
+                    checking the current PNR status of your Indian Railway tickets.
+                    Easily plan your journey by staying updated on the real-time
+                    status of your bookings.
+                    
+                    <div style="font-weight: 600; font-size: 1.2rem; padding-bottom: 1vh;margin-top: 1vh;">What's Coming Soon?</div>
+                    
+                    Future updates will allow you to:
+                    View a history of your previously searched PNRs.
+                    Get predictions and analysis on ticket confirmation, powered by insights from past PNR searches.
+                    
+                    <div style="font-weight: bold; color: rgb(0, 255, 183);padding-top: 1vh;">
+                        Plan smarter and travel with confidence using Railoo Connect!
+                    </div>
+                    </div>
             </div>
-            <div third line>
-                Whether you're
-               on a quick trip or a long adventure, we're here to
-                make your travel experience smooth and stress-free.
-            </div>
-              
-            
         </div>
-        <div class="login_signup_button">
-            <a href="{% url 'singin' %}" style="text-decoration: none;"><button class="button-87" role="button" >SignIn</button></a>
-            <a href="{% url 'signup' %}" style="text-decoration: none;"><button class="button-87" role="button" >SignUp</button></a>
+        <div class="supdivtwo">
+                <img src="{% static 'user/images/h.webp' %}" alt="no image is loaded">
+                <div class="button_con" style="z-index: 1;">
+                    <div  class="starter" style="font-weight: bold; font-size: 2rem;">Let's Get Started  !</div>
+                    <a href="{% url 'singin' %}"><button class="but1">SING IN</button></a>
+                    <a href="{% url 'signup' %}"><button class="but2">SING UP</button></a>
+                </div>                
         </div>
     </div>
     

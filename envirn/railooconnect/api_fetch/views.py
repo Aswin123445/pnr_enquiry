@@ -9,23 +9,26 @@ from .data.station import dit
 from django.views.decorators.cache import never_cache
 from .models import PNR
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 
 
 # Create your views here.
 @never_cache
 def home_page(request):
+
     if 'user' not in request.session :
         return redirect('singin')
     if request.method != 'GET' or request.GET.get('pnr') is None:
         return render(request,'homepage/home.html')
     pnr_number=request.GET.get('pnr')
-    print(request.GET.get('pnr'))
     data=fetch_data_from_api(pnr_number)
+    if data is None or type(data) is str :
+        messages.info(request , "pnr is flushed or not valid ")
+        return render(request,'homepage/home.html')
     da=data.content.decode()
     dictionary_data = json.loads(da)  # Parse the string into a dictionary
     print(type(da))
     datas=custom_dictionary(dictionary_data)
-    
     for i in range(len(dit)):
         if dit[i]['code'] == datas['Sstation']:
             datas['full_name'] = dit[i]['name']

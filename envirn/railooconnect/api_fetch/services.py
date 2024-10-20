@@ -8,12 +8,23 @@ def fetch_data_from_api(pnr_number):
         'x-rapidapi-host': 'irctc-indian-railway-pnr-status.p.rapidapi.com',
         'x-rapidapi-key' : 'db7ea411f0msh9c7ce40ad6f5bf8p1ed4e9jsnf96f6c86c08e'
     }
-    resonse=requests.get(url=url,headers=header) #
-    print(resonse)
-    return JsonResponse(resonse.json(),safe=False)
+    try:
+        resonse=requests.get(url=url,headers=header)
+        if resonse.status_code != 200:
+            return 'pnr flushed or not genereated for the api'
+        data=resonse.json()
+        if data['success'] == True :
+           return JsonResponse(data,safe=False)
+    except requests.exceptions.RequestException as e:
+        print(f'error occured while fetching data {e}') 
+        return None   
+    
+
 
 #creating custom dictonary
 def custom_dictionary(data_dict):
+    if not data_dict:
+        return False
     cust_dict={
         'train_name':data_dict['data']['trainName'],
         'train_number':data_dict['data']['trainNumber'],
