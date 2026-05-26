@@ -20,7 +20,6 @@ def fetch_data_from_api(pnr_number):
         return None   
     
 
-
 #creating custom dictonary
 def custom_dictionary(data_dict):
     if not data_dict:
